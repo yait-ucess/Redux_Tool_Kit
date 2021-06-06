@@ -39,14 +39,14 @@ export const taskSlice = createSlice({
       state.tasks = [newItem, ...state.tasks]
     },
     completeTask: (state, action) => {
-      const task = state.tasks.find((t) => t.id === action.payload.id)
+      const task = state.tasks.find((t) => t.id === action.payload.id);
       if (task) {
         task.completed = !task.completed;
       }
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     deleteTask: (state, action) => {
-      state.tasks = state.tasks.filter((t) => t.id !== action.payload.id)
+      state.tasks = state.tasks.filter((t) => t.id !== action.payload.id);
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
